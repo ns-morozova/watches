@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #c8d9ff;
+  box-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.3),
+        4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.inputsBlock {
+  display: flex;
+  gap: 10px;
+}
+
+.input {
+  outline: none;
+}
+
+.input::placeholder {
+  color: #a3a3a3;
+}
+
+.watchBlock {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 3px 7px;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  background-color: #a1b7e2;
+}
+
+.nameCity {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.time {
+  margin: 0;
+  color: black;
+  font-weight: 600;
+}
+
+.btnRemove {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.watchList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -1,0 +1,27 @@
+image: Ubuntu2204 # образ для сборки
+
+stack: node 20  # окружение
+
+branches:
+  only:
+    - master  # ветка git
+
+cache: node_modules  # кеширование
+
+install:
+  - yarn install  # команда установки зависимостей
+
+build: off  # отключаем встроенную в appveyor систему сборки
+
+build_script:
+  - yarn run build   # команда сборки
+
+test_script:
+  - yarn run lint  # скрипт тестирования
+
+deploy_script:  # скрипт развёртывания
+  - git config --global credential.helper store
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com">"$HOME/.git-credentials"
+  - git config --global user.name ns-morozova
+  - git config --global user.email ns_morozova@mail.ru  
+  - yarn dlx push-dir --dir=dist --branch=gh-pages --force --verbose
