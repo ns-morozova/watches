@@ -15,11 +15,11 @@ interface ClockPanelState {
     timezone: string;
 }
 
-class ClockPanel extends Component<{}, ClockPanelState> {
+class ClockPanel extends Component<object, ClockPanelState> {
     private clockId: number;
     private intervals: Map<number, NodeJS.Timeout>;
 
-    constructor(props: {}) {
+    constructor(props: object) {
         super(props);
         this.state = {
             clocks: [],
